@@ -89,11 +89,12 @@ public class Scavenger : MonoBehaviour
 
     }
 
+            
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.CompareTag("Red"))
+        if (collision.gameObject.tag == "Red")
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
