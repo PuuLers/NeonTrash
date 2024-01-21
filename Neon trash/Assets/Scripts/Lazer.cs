@@ -13,6 +13,7 @@ public class Lazer : MonoBehaviour
     public GameObject lazer;
     private float timer = 0f;
     private bool isActive = false;
+    private Animator animator;
     private void Stabilization()
     {
         float coefficient = lazer.transform.localScale.x / 2;
@@ -22,10 +23,12 @@ public class Lazer : MonoBehaviour
 
     private void Activate()
     {
+        
         lazer.SetActive(true);
     }
     private void Deactivate()
     {
+        
         lazer.SetActive(false);
     }
 
@@ -50,7 +53,7 @@ public class Lazer : MonoBehaviour
     }
     void Start()
     {
-
+        animator = GetComponent<Animator>();
     }
 
 

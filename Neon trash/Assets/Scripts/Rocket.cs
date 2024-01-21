@@ -8,6 +8,7 @@ using static UnityEngine.GraphicsBuffer;
 
 public class Rocket : MonoBehaviour
 {
+    public ParticleSystem ps;
     private Rigidbody2D _rigidbody;
     public float speed;
     public float smoothSpeed;
@@ -15,6 +16,7 @@ public class Rocket : MonoBehaviour
     private bool _active = false;
     private void Move()
     {
+        
         transform.Translate(Vector2.right * speed * Time.deltaTime);
         Follow();
     }
@@ -43,12 +45,16 @@ public class Rocket : MonoBehaviour
     {
         _active = false;
         _rigidbody.gravityScale = 1;
+        
     }
 
     void Start()
     {
+        
         _player = GameObject.Find("Scavenger");
+        ps = GetComponent<ParticleSystem>();
         _rigidbody = GetComponent<Rigidbody2D>();
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

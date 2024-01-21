@@ -31,6 +31,11 @@ public class Scavenger : MonoBehaviour
         Animate();
     }
 
+    private void Update()
+    {
+        Restart();
+    }
+
     private void Move()
     {
         if (Input.GetMouseButton(0))
@@ -42,6 +47,15 @@ public class Scavenger : MonoBehaviour
         }
 
     }
+   private void Restart()
+    {
+        if (Input.GetButtonDown("Jump"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+    }
+
+
 
     private void Animate()
     {
