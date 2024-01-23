@@ -1505,6 +1505,132 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: neon trash_45
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 16
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc46d9dfee4504943a4b998be4c2e383
+      internalID: 1038336289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: neon trash_47
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 65
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bce1c9ed1938578409a14ac1a3194cb9
+      internalID: -1268490832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: neon trash_67
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 17
+        width: 3
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5482c9b5ade964489f1e89e68a845af
+      internalID: 1726957199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: neon trash_68
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 11
+        width: 3
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07a914a1cf113554196066564be1b105
+      internalID: 1711783645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: neon trash_69
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 6
+        width: 3
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ee470aea35496d41973b481c1a5f019
+      internalID: -1430359033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: neon trash_70
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 1
+        width: 3
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a05f7a2d14073c44ac68bd6a1c17603
+      internalID: 827865496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -1580,7 +1706,11 @@ TextureImporter:
       neon trash_64: -331791636
       neon trash_65: -1250796860
       neon trash_66: 718071486
+      neon trash_67: 1726957199
+      neon trash_68: 1711783645
+      neon trash_69: -1430359033
       neon trash_7: -2094268026
+      neon trash_70: 827865496
       neon trash_8: 1308590791
       neon trash_9: 288170874
   spritePackingTag: 
