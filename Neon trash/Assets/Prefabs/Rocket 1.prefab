@@ -5001,6 +5001,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ps: {fileID: 7507333113191006388}
+  actionTime: 5
   speed: 12
   smoothSpeed: 2
 --- !u!50 &8391623188686563239

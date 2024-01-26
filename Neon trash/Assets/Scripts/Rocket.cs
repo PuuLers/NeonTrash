@@ -10,6 +10,7 @@ public class Rocket : MonoBehaviour
 {
     public ParticleSystem ps;
     private Rigidbody2D _rigidbody;
+    public float actionTime;
     public float speed;
     public float smoothSpeed;
     private GameObject _player;
@@ -70,7 +71,7 @@ public class Rocket : MonoBehaviour
         if (_active)
         {
             Move();
-            Invoke("Deactivate", 5);
+            Invoke("Deactivate", actionTime);
         }
         Gravity();
     }
