@@ -13,6 +13,7 @@ public class Scavenger : MonoBehaviour
     private Rigidbody2D _rigidbody;
     public float normalizationRotation;
     private Animator _animator;
+    public float impulse;
 
 
 
@@ -41,9 +42,9 @@ public class Scavenger : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             float angelL = FollowNozzleL() * Mathf.Deg2Rad;
-            _rigidbody.AddForce(new Vector3(-1f * Mathf.Cos(angelL), -1f * Mathf.Sin(angelL), 0), ForceMode2D.Impulse);
+            _rigidbody.AddForce(new Vector3(-impulse * Mathf.Cos(angelL), -impulse * Mathf.Sin(angelL), 0), ForceMode2D.Impulse);
             float angelR = FollowNozzleR() * Mathf.Deg2Rad;
-            _rigidbody.AddForce(new Vector3(-1f * Mathf.Cos(angelR), -1f * Mathf.Sin(angelR), 0), ForceMode2D.Impulse);
+            _rigidbody.AddForce(new Vector3(-impulse * Mathf.Cos(angelR), -impulse * Mathf.Sin(angelR), 0), ForceMode2D.Impulse);
         }
 
     }
