@@ -192,7 +192,7 @@ MonoBehaviour:
   nozzleL: {fileID: 7533366573324160484}
   nozzleR: {fileID: 2163855010412839820}
   normalizationRotation: 1
-  impulse: 0.65
+  impulse: 0.7
 --- !u!95 &6868405352374431525
 Animator:
   serializedVersion: 5
