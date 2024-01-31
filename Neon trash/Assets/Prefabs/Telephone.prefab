@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6077475609897460966}
   - component: {fileID: 6077475609897460961}
   - component: {fileID: 4261036808994237500}
+  - component: {fileID: 7314797576530945726}
   m_Layer: 0
   m_Name: Telephone
   m_TagString: Untagged
@@ -121,3 +122,24 @@ PolygonCollider2D:
       - {x: 1.1454109, y: -0.046171114}
       - {x: 1.1545888, y: 0.23834467}
       - {x: 0.8517172, y: 0.65000004}
+--- !u!50 &7314797576530945726
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6077475609897460960}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 1
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
