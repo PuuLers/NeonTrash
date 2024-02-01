@@ -30,8 +30,8 @@ public class Scavenger2 : MonoBehaviour
 
     void FixedUpdate()
     {
-        FollowNozzleL();
-        FollowNozzleR();
+        //FollowNozzleL();
+        //FollowNozzleR();
         //NormalizationRotation(normalizationRotation);
         Move();
         Animate();
@@ -89,7 +89,7 @@ public class Scavenger2 : MonoBehaviour
 
     private float FollowNozzleL()
     {
-        Vector3 diference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - nozzleL.transform.position;
+        Vector3 diference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         float rotateZ = Mathf.Atan2(diference.y, diference.x) * Mathf.Rad2Deg;
         nozzleL.transform.rotation = Quaternion.Euler(0f, 0f, rotateZ);
 
@@ -97,7 +97,7 @@ public class Scavenger2 : MonoBehaviour
     }
     private float FollowNozzleR()
     {
-        Vector3 diference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - nozzleR.transform.position;
+        Vector3 diference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         float rotateZ = Mathf.Atan2(diference.y, diference.x) * Mathf.Rad2Deg;
         nozzleR.transform.rotation = Quaternion.Euler(0f, 0f, rotateZ);
 
