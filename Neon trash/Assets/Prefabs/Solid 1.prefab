@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4029896766119656187}
   - component: {fileID: 2166016676531057375}
-  - component: {fileID: 3323882598757325296}
+  - component: {fileID: 3873521883608091701}
   m_Layer: 0
   m_Name: Solid 1
   m_TagString: Untagged
@@ -139,7 +139,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!61 &3323882598757325296
+--- !u!61 &3873521883608091701
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -163,5 +163,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.2685575, y: 0.40358686}
+  m_Size: {x: 4.2986584, y: 0.4}
   m_EdgeRadius: 0

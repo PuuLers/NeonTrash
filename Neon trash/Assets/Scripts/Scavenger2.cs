@@ -6,32 +6,36 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 
-public class Scavenger : MonoBehaviour
+public class Scavenger2 : MonoBehaviour
 {
     public GameObject nozzleL;
     public GameObject nozzleR;
     private Rigidbody2D _rigidbody;
     public float normalizationRotation;
-    private Animator _animator;
+    private Animator nozzleRAnimator;
+    private Animator nozzleLAnimator;
     public float impulse;
     private bool _isGrounded;
+    public Rigidbody2D nozzleLRigidbody;
+    public Rigidbody2D nozzleRRigidbody;
 
 
 
     void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
-        _animator = GetComponent<Animator>();
+        nozzleLAnimator = nozzleL.GetComponent<Animator>();
+        nozzleRAnimator = nozzleR.GetComponent<Animator>();
     }
 
     void FixedUpdate()
     {
         FollowNozzleL();
         FollowNozzleR();
-        NormalizationRotation(normalizationRotation);
+        //NormalizationRotation(normalizationRotation);
         Move();
         Animate();
-        CheckGround();
+        //CheckGround();
     }
 
     private void Update()
@@ -44,13 +48,15 @@ public class Scavenger : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             float angelL = FollowNozzleL() * Mathf.Deg2Rad;
-            _rigidbody.AddForce(new Vector3(-impulse * Mathf.Cos(angelL), -impulse * Mathf.Sin(angelL), 0), ForceMode2D.Impulse);
-            float angelR = FollowNozzleR() * Mathf.Deg2Rad;
-            _rigidbody.AddForce(new Vector3(-impulse * Mathf.Cos(angelR), -impulse * Mathf.Sin(angelR), 0), ForceMode2D.Impulse);
+            nozzleLRigidbody.AddForce(new Vector3(-impulse * Mathf.Cos(angelL), -impulse * Mathf.Sin(angelL), 0), ForceMode2D.Impulse);
         }
-
+        if (Input.GetMouseButton(1))
+        {
+            float angelR = FollowNozzleR() * Mathf.Deg2Rad;
+            nozzleRRigidbody.AddForce(new Vector3(-impulse * Mathf.Cos(angelR), -impulse * Mathf.Sin(angelR), 0), ForceMode2D.Impulse);
+        }
     }
-   private void Restart()
+    private void Restart()
     {
         if (Input.GetButtonDown("Jump"))
         {
@@ -62,20 +68,28 @@ public class Scavenger : MonoBehaviour
 
     private void Animate()
     {
-        if (Input.GetMouseButton(0))
+        if(Input.GetMouseButton(1))
         {
-            _animator.speed = 2;
+            nozzleRAnimator.speed = 2f;
         }
         else
         {
-            _animator.speed = 0.5f;
+            nozzleRAnimator.speed = 0.5f;
+        }
+        if (Input.GetMouseButton(0))
+        {
+            nozzleLAnimator.speed = 2f;
+        }
+        else
+        {
+            nozzleLAnimator.speed = 0.5f;
         }
 
     }
 
     private float FollowNozzleL()
     {
-        Vector3 diference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        Vector3 diference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - nozzleL.transform.position;
         float rotateZ = Mathf.Atan2(diference.y, diference.x) * Mathf.Rad2Deg;
         nozzleL.transform.rotation = Quaternion.Euler(0f, 0f, rotateZ);
 
@@ -83,7 +97,7 @@ public class Scavenger : MonoBehaviour
     }
     private float FollowNozzleR()
     {
-        Vector3 diference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        Vector3 diference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - nozzleR.transform.position;
         float rotateZ = Mathf.Atan2(diference.y, diference.x) * Mathf.Rad2Deg;
         nozzleR.transform.rotation = Quaternion.Euler(0f, 0f, rotateZ);
 
@@ -94,7 +108,7 @@ public class Scavenger : MonoBehaviour
 
     private void NormalizationRotation(float norm)
     {
-        if(!_isGrounded)
+        if (!_isGrounded)
         {
             Debug.Log(123);
             if (transform.rotation.z > 0)
@@ -113,7 +127,7 @@ public class Scavenger : MonoBehaviour
     {
         Collider2D[] col = Physics2D.OverlapCircleAll(transform.position, 0.3f);
         _isGrounded = col.Length > 1;
-       
+
     }
 
 
@@ -124,5 +138,5 @@ public class Scavenger : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
-    
+
 }
