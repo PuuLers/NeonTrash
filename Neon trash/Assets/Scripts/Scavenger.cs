@@ -4,34 +4,44 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
+using static UnityEditor.Experimental.GraphView.GraphView;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class Scavenger : MonoBehaviour
 {
-    public GameObject nozzleL;
-    public GameObject nozzleR;
-    private Rigidbody2D _rigidbody;
-    public float normalizationRotation;
-    private Animator _animator;
+
+    
+    //public float normalizationRotation;
+    public float smoothSpeed;
     public float impulse;
     private bool _isGrounded;
 
+    private Rigidbody2D _rigidbody;
 
+    public GameObject nozzleL;
+    public GameObject nozzleR;
+
+    private Animator nozzleRAnimator;
+    private Animator nozzleLAnimator;
+    private Animator _animator;
 
     void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
+        nozzleLAnimator = nozzleL.GetComponent<Animator>();
+        nozzleRAnimator = nozzleR.GetComponent<Animator>();
     }
 
     void FixedUpdate()
     {
         FollowNozzleL();
         FollowNozzleR();
-        NormalizationRotation(normalizationRotation);
+        //NormalizationRotation(normalizationRotation);
         Move();
         Animate();
         CheckGround();
+        Follow();
     }
 
     private void Update()
@@ -58,19 +68,32 @@ public class Scavenger : MonoBehaviour
         }
     }
 
+    private void Follow()
+    {
+        if (Input.GetMouseButton(1))
+        {
+            _rigidbody.angularVelocity = 0;
+            Vector3 targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 direction = targetPosition - transform.position; // Направление к целевой позиции
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg; // Вычисляем угол в радианах и конвертируем в градусы
+            Quaternion rotation = Quaternion.AngleAxis(angle + 90, Vector3.forward); // Поворачиваем объект в заданное направление
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * smoothSpeed); // Применяем плавное вращение
+        }
+    }
 
 
     private void Animate()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) || Input.GetMouseButton(1))
         {
-            _animator.speed = 2;
+            nozzleRAnimator.speed = 2f;
+            nozzleLAnimator.speed = 2f;
         }
         else
         {
-            _animator.speed = 0.5f;
+            nozzleRAnimator.speed = 0.5f;
+            nozzleLAnimator.speed = 0.5f;
         }
-
     }
 
     private float FollowNozzleL()

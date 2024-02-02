@@ -47,9 +47,9 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 0
-  m_AngularDrag: 1
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 1
@@ -259,10 +259,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6200456e3ba5caa44be88dfd1c4d1622, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  smoothSpeed: 8
+  impulse: 0.7
   nozzleL: {fileID: 7533366573324160484}
   nozzleR: {fileID: 2163855010412839820}
-  normalizationRotation: 1
-  impulse: 1
 --- !u!114 &6341833696455067052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -407,9 +407,9 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 0
-  m_AngularDrag: 1
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 1
