@@ -51,7 +51,7 @@ MonoBehaviour:
   ps: {fileID: 0}
   actionTime: 5
   speed: 8
-  smoothSpeed: 3
+  smoothSpeed: 5
 --- !u!50 &8391623188686563239
 Rigidbody2D:
   serializedVersion: 4
