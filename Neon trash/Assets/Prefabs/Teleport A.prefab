@@ -156,6 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 0}
   sprite: {fileID: 715434093309691530}
+  thisB: 0
 --- !u!58 &2066249009093411948
 CircleCollider2D:
   m_ObjectHideFlags: 0
