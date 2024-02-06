@@ -15,12 +15,18 @@ public class Rocket : MonoBehaviour
     public float smoothSpeed;
     private GameObject _player;
     private bool _active = false;
+
+
+
     private void Move()
     {
+
+
         Vector2 vector = new Vector2(_player.transform.position.x, _player.transform.position.y);
         //_rigidbody.AddForce(vector * speed * 10 * Time.fixedDeltaTime, ForceMode2D.Force);
         transform.Translate(Vector2.right * speed * Time.deltaTime);
         //transform.position += Vector3.right * speed * Time.deltaTime;
+
         Follow();
     }
 
@@ -59,6 +65,7 @@ public class Rocket : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
 
     }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
