@@ -5,7 +5,7 @@ using UnityEngine.SocialPlatforms;
 
 public class Lazer : MonoBehaviour
 {
-    [Range(0f, 10f)]
+    [Range(0f, 50f)]
     public float length;
     [Range(0f, 10f)]
     public float lifeTime;
