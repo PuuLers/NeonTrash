@@ -14,6 +14,7 @@ public class Lazer : MonoBehaviour
     private float timer = 0f;
     private bool isActive = false;
     private Animator animator;
+    public float delay;
     private void Stabilization()
     {
         float coefficient = lazer.transform.localScale.x / 2;
@@ -54,6 +55,7 @@ public class Lazer : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        timer -= delay;
     }
 
 
