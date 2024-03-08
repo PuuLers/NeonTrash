@@ -64,7 +64,7 @@ public class Scavenger : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene(1);
         }
     }
 
@@ -144,7 +144,7 @@ public class Scavenger : MonoBehaviour
     {
         if (collision.gameObject.tag == "Red")
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene(1);
         }
     }
     

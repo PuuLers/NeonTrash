@@ -12,7 +12,7 @@ public class Arrow : MonoBehaviour
     void Awake()
     {
         _player = GameObject.FindGameObjectWithTag("Player");
-
+        Cursor.visible = false;
     }
     private void SetPosition()
     {

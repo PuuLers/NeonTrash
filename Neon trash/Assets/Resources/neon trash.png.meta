@@ -1090,9 +1090,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 64
-        width: 15
-        height: 33
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2102,7 +2102,7 @@ TextureImporter:
         width: 14
         height: 14
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2110,6 +2110,27 @@ TextureImporter:
       bones: []
       spriteID: 43c67f5adeca0144bb6aefe1e434ef54
       internalID: 797090936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: neon trash_94
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 548ef302c0937bb44bfcb451c7b484f8
+      internalID: 1296216837
       vertices: []
       indices: 
       edges: []
@@ -2219,6 +2240,7 @@ TextureImporter:
       neon trash_91: -463616778
       neon trash_92: -843941359
       neon trash_93: 797090936
+      neon trash_94: 1296216837
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Rendering;
 using UnityEngine;
+using UnityEngine.Rendering.Universal.Internal;
 
 public class Parallax : MonoBehaviour
 {
@@ -8,6 +10,7 @@ public class Parallax : MonoBehaviour
     [Range(0, 1f)] public float scale = 1f;
     public bool disableVerticalParallax;
     private Vector3 targetPrevosPosition;
+    
     void Start()
     {
         if (!target)
@@ -15,6 +18,7 @@ public class Parallax : MonoBehaviour
             target = Camera.main.transform;
         }
         targetPrevosPosition = target.position; 
+
     }
 
     // Update is called once per frame
