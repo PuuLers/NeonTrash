@@ -84,16 +84,9 @@ public class Scavenger : MonoBehaviour
 
     private void Animate()
     {
-        if (Input.GetMouseButton(0) || Input.GetMouseButton(1))
-        {
-            nozzleRAnimator.speed = 2f;
-            nozzleLAnimator.speed = 2f;
-        }
-        else
-        {
-            nozzleRAnimator.speed = 0.5f;
-            nozzleLAnimator.speed = 0.5f;
-        }
+        bool _state = Input.GetMouseButton(0) || Input.GetMouseButton(1);
+        nozzleRAnimator.speed = _state ? 2f : 0.5f;
+        nozzleLAnimator.speed = _state ? 2f : 0.5f;
     }
 
     private float FollowNozzleL()

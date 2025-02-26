@@ -31,20 +31,30 @@ namespace N.Fridman.CameraFollow.Scripts
 
         private void Update()
         {
-            if (this.playerTransform)
+            //if (this.playerTransform)
+            //{
+            //    Vector3 target = new Vector3()
+            //    {
+            //        x = this.playerTransform.position.x,
+            //        y = this.playerTransform.position.y,
+            //        z = this.playerTransform.position.z - 10,
+            //    };
+
+            //    Vector3 pos = Vector3.Lerp(this.transform.position, target, this.movingSpeed * Time.deltaTime);
+
+            //    this.transform.position = pos;
+            //}
+
+            if (!this.playerTransform) return;
+
+            Vector3 target = new Vector3()
             {
-                Vector3 target = new Vector3()
-                {
-                    x = this.playerTransform.position.x,
-                    y = this.playerTransform.position.y,
-                    z = this.playerTransform.position.z - 10,
-                };
+                x = this.playerTransform.position.x,
+                y = this.playerTransform.position.y,
+                z = this.playerTransform.position.z - 10,
+            };
 
-                Vector3 pos = Vector3.Lerp(this.transform.position, target, this.movingSpeed * Time.deltaTime);
-
-                this.transform.position = pos;
-            }
+            this.transform.position = Vector3.Lerp(this.transform.position, target, this.movingSpeed * Time.deltaTime);
         }
-    
     }
 }

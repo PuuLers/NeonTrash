@@ -7,7 +7,11 @@ using UnityEngine.Rendering.Universal.Internal;
 public class Parallax : MonoBehaviour
 {
     public Transform target;
-    [Range(0, 1f)] public float scale = 1f;
+
+    [Range(0, 1f)] 
+    public float scale = 1f;
+
+
     public bool disableVerticalParallax;
     private Vector3 targetPrevosPosition;
     

@@ -17,14 +17,15 @@ public class Teleport : MonoBehaviour
 
     private void Rotate()
     {
-        if (!thisB)
-        {
-            sprite.transform.Rotate(0, 0, 1);
-        }
-        else
-        {
-            sprite.transform.Rotate(0, 0, -1);
-        }
+        //if (!thisB)
+        //{
+        //    sprite.transform.Rotate(0, 0, 1);
+        //}
+        //else
+        //{
+        //    sprite.transform.Rotate(0, 0, -1);
+        //}
+        sprite.transform.Rotate(0, 0, thisB ? -1 : 1);
     }
 
 
