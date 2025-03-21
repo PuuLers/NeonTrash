@@ -1,4 +1,4 @@
-using System.Collections;
+п»їusing System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -74,10 +74,10 @@ public class Scavenger : MonoBehaviour
         {
             _rigidbody.angularVelocity = 0;
             Vector3 targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector3 direction = targetPosition - transform.position; // Направление к целевой позиции
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg; // Вычисляем угол в радианах и конвертируем в градусы
-            Quaternion rotation = Quaternion.AngleAxis(angle + 90, Vector3.forward); // Поворачиваем объект в заданное направление
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * smoothSpeed); // Применяем плавное вращение
+            Vector3 direction = targetPosition - transform.position; // ГЌГ ГЇГ°Г ГўГ«ГҐГ­ГЁГҐ ГЄ Г¶ГҐГ«ГҐГўГ®Г© ГЇГ®Г§ГЁГ¶ГЁГЁ
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg; // Г‚Г»Г·ГЁГ±Г«ГїГҐГ¬ ГіГЈГ®Г« Гў Г°Г Г¤ГЁГ Г­Г Гµ ГЁ ГЄГ®Г­ГўГҐГ°ГІГЁГ°ГіГҐГ¬ Гў ГЈГ°Г Г¤ГіГ±Г»
+            Quaternion rotation = Quaternion.AngleAxis(angle + 90, Vector3.forward); // ГЏГ®ГўГ®Г°Г Г·ГЁГўГ ГҐГ¬ Г®ГЎГєГҐГЄГІ Гў Г§Г Г¤Г Г­Г­Г®ГҐ Г­Г ГЇГ°Г ГўГ«ГҐГ­ГЁГҐ
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * smoothSpeed); // ГЏГ°ГЁГ¬ГҐГ­ГїГҐГ¬ ГЇГ«Г ГўГ­Г®ГҐ ГўГ°Г Г№ГҐГ­ГЁГҐ
         }
     }
 
@@ -139,6 +139,30 @@ public class Scavenger : MonoBehaviour
         {
             SceneManager.LoadScene(1);
         }
+        else if (collision.gameObject.CompareTag("Twister"))
+        {
+            ApplyForceToTwister(collision);
+        }
     }
-    
+
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Twister"))
+        {
+            ApplyForceToTwister(collision);
+        }
+    }
+
+    private void ApplyForceToTwister(Collision2D collision)
+    {
+        Twister twister = collision.gameObject.GetComponent<Twister>();
+        if (twister != null)
+        {
+            // РћРїСЂРµРґРµР»СЏРµРј РЅР°РїСЂР°РІР»РµРЅРёРµ РґРІРёР¶РµРЅРёСЏ РёРіСЂРѕРєР° Рё РїСЂРёРјРµРЅСЏРµРј СЃРёР»Сѓ Рє С‚РІРёСЃС‚РµСЂСѓ
+            float torqueForce = _rigidbody.velocity.x * impulse;
+            twister.ApplyTorque(torqueForce);
+        }
+    }
+
+
 }

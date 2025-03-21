@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,40 +8,36 @@ public class Twister : MonoBehaviour
     public bool reverse;
     public bool byTrigger;
     private Rigidbody2D _rb;
+    private float _externalTorque;
 
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
     }
+
     private void Rotate()
     {
-        if (reverse)
-        {
-
-            _rb.MoveRotation(_rb.rotation + speed * 10 * Time.fixedDeltaTime);
-        }
-        else
-        {
-
-            _rb.MoveRotation(_rb.rotation + -speed * 10 * Time.fixedDeltaTime);
-        }
+        float rotationSpeed = speed * 10 * Time.fixedDeltaTime;
+        _rb.MoveRotation(_rb.rotation + (reverse ? rotationSpeed : -rotationSpeed));
     }
-
 
     void FixedUpdate()
     {
         if (!byTrigger)
         {
             Rotate();
+        }
 
+        if (_externalTorque != 0)
+        {
+            _rb.MoveRotation(_rb.rotation + _externalTorque * Time.fixedDeltaTime);
+            _externalTorque = 0; // Обнуляем после применения
         }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    public void ApplyTorque(float force)
     {
-        if (collision.CompareTag("Player") && byTrigger)
-        {
-            Rotate();
-        }
+        _externalTorque = force; // Применяем внешний импульс
     }
 }
+
