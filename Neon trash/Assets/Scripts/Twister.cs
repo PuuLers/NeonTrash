@@ -8,7 +8,6 @@ public class Twister : MonoBehaviour
     public bool reverse;
     public bool byTrigger;
     private Rigidbody2D _rb;
-    private float _externalTorque;
 
     private void Start()
     {
@@ -17,8 +16,8 @@ public class Twister : MonoBehaviour
 
     private void Rotate()
     {
-        float rotationSpeed = speed * 10 * Time.fixedDeltaTime;
-        _rb.MoveRotation(_rb.rotation + (reverse ? rotationSpeed : -rotationSpeed));
+        float rotationSpeed = speed * 100 * Time.fixedDeltaTime;
+        _rb.AddTorque(reverse ? rotationSpeed : -rotationSpeed, ForceMode2D.Force);
     }
 
     void FixedUpdate()
@@ -27,17 +26,14 @@ public class Twister : MonoBehaviour
         {
             Rotate();
         }
-
-        if (_externalTorque != 0)
-        {
-            _rb.MoveRotation(_rb.rotation + _externalTorque * Time.fixedDeltaTime);
-            _externalTorque = 0; // Обнуляем после применения
-        }
     }
 
     public void ApplyTorque(float force)
     {
-        _externalTorque = force; // Применяем внешний импульс
+        _rb.MoveRotation(_rb.rotation + force * 10 * Time.fixedDeltaTime);
     }
+
 }
+
+
 

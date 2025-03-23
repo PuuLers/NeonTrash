@@ -149,9 +149,15 @@ public class Scavenger : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Twister"))
         {
-            ApplyForceToTwister(collision);
+            Twister twister = collision.gameObject.GetComponent<Twister>();
+            if (twister != null)
+            {
+                float torqueForce = _rigidbody.velocity.x * impulse * 10;
+                twister.ApplyTorque(torqueForce);
+            }
         }
     }
+
 
     private void ApplyForceToTwister(Collision2D collision)
     {
@@ -159,7 +165,7 @@ public class Scavenger : MonoBehaviour
         if (twister != null)
         {
             // Определяем направление движения игрока и применяем силу к твистеру
-            float torqueForce = _rigidbody.velocity.x * impulse;
+            float torqueForce = _rigidbody.velocity.x * impulse * 100;
             twister.ApplyTorque(torqueForce);
         }
     }
