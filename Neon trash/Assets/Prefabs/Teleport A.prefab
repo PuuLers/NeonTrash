@@ -117,6 +117,7 @@ GameObject:
   - component: {fileID: 97612695963531947}
   - component: {fileID: 2066249009093411948}
   - component: {fileID: 902584441833178175}
+  - component: {fileID: 4577876808886582806}
   m_Layer: 0
   m_Name: Teleport A
   m_TagString: Untagged
@@ -173,6 +174,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1
+--- !u!114 &4577876808886582806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3134146680820795887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0080d80b861ed104ba56b007ef4421bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7690875712595589293
 GameObject:
   m_ObjectHideFlags: 0

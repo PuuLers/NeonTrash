@@ -46,7 +46,7 @@ public class Scavenger : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
-        Debug.Log(_healthPoints);
+        
     }
 
 
@@ -62,10 +62,7 @@ public class Scavenger : MonoBehaviour
         Follow();
     }
 
-    private void Update()
-    {
-        Restart();
-    }
+ 
 
     private void Move()
     {
@@ -78,13 +75,7 @@ public class Scavenger : MonoBehaviour
         }
 
     }
-   private void Restart()
-    {
-        if (Input.GetButtonDown("Jump"))
-        {
-            SceneManager.LoadScene(1);
-        }
-    }
+
 
     private void Follow()
     {
@@ -130,7 +121,7 @@ public class Scavenger : MonoBehaviour
     {
         if(!_isGrounded)
         {
-            Debug.Log(123);
+            
             if (transform.rotation.z > 0)
             {
                 transform.Rotate(new Vector3(0, 0, -norm));

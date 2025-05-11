@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8175764968881869555}
   - component: {fileID: 7664602752903278065}
   - component: {fileID: 7031100004251000837}
+  - component: {fileID: 4155415251573992344}
   m_Layer: 0
   m_Name: Gear 1
   m_TagString: Red
@@ -172,3 +173,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &4155415251573992344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597457602763523348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd2be47c90612f84e8563b306e38a9cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1086075059964208527}
   - component: {fileID: 7427369076071094751}
   - component: {fileID: 6126444689422288212}
-  - component: {fileID: 6517388200232691648}
   m_Layer: 0
   m_Name: Slipper
   m_TagString: Untagged
@@ -140,15 +139,3 @@ PolygonCollider2D:
       - {x: -0.6, y: -0.2}
       - {x: 0.6, y: -0.2}
       - {x: 0.6, y: -0.004666075}
---- !u!114 &6517388200232691648
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1086075059964208526}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13385ad0d5d0e8c4d853e88fbc1f034b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

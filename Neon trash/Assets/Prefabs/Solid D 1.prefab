@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5262358284553432925}
   - component: {fileID: 2130728173537493668}
   - component: {fileID: 1525125808339806344}
-  - component: {fileID: 457739563285011698}
+  - component: {fileID: 5535291040908331553}
   m_Layer: 0
   m_Name: Solid D 1
   m_TagString: Red
@@ -134,7 +134,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &457739563285011698
+--- !u!114 &5535291040908331553
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,6 +143,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 941716036599898200}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13385ad0d5d0e8c4d853e88fbc1f034b, type: 3}
+  m_Script: {fileID: 11500000, guid: dd2be47c90612f84e8563b306e38a9cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

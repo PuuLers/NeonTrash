@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5262358284553432925}
   - component: {fileID: 2130728173537493668}
   - component: {fileID: 5615061687478561898}
+  - component: {fileID: 6674728569151256223}
   m_Layer: 0
   m_Name: Solid D 3
   m_TagString: Red
@@ -133,3 +134,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6674728569151256223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941716036599898200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd2be47c90612f84e8563b306e38a9cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

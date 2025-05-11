@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class TeleportA : MonoBehaviour
 {
+    public Level level;
+    public GameObject FinishPannel;
+    public LevelWinPannel winPannelComponent;
     private Collider2D collision;
 
     private void FixedUpdate()
@@ -17,15 +20,23 @@ public class TeleportA : MonoBehaviour
         transform.Rotate(0, 0, 1);
     }
 
-
-
+    private void Start()
+    {
+        winPannelComponent = FinishPannel.GetComponent<LevelWinPannel>();
+    }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
         this.collision = collision;
-        if (Vector2.Distance(collision.transform.position, transform.position) > 0.3f && collision.CompareTag("Player") == true)
+        if (collision != null)
         {
-            StartCoroutine(IPortal());
+            if (collision.CompareTag("Player"))
+            {
+                if (Vector2.Distance(collision.transform.position, transform.position) > 0.3f)
+                {
+                    StartCoroutine(IPortal());
+                }
+            }
         }
     }
 
@@ -34,8 +45,10 @@ public class TeleportA : MonoBehaviour
         //rb.simulated = false;
         //yield return new WaitForSeconds(0.5f);
         collision.transform.position = Vector2.MoveTowards(collision.transform.position, transform.position, 3 * Time.deltaTime);
+        level.Finish();
         yield return new WaitForSeconds(0.25f);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        FinishPannel.SetActive(true);
+        winPannelComponent.ShowStars();
         //rb.simulated = true;
     }
 }

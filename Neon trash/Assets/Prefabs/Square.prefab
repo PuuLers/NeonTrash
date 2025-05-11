@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 326468105126496630}
   - component: {fileID: 2973216095810973505}
   - component: {fileID: 5912650581757353030}
+  - component: {fileID: 703554477066411707}
   m_Layer: 0
   m_Name: Square
   m_TagString: Red
@@ -122,5 +123,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1db2f5e9543ada94ca22e6f9cdf4ec3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dtime: 10
+--- !u!114 &703554477066411707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1376968263447296117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd2be47c90612f84e8563b306e38a9cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

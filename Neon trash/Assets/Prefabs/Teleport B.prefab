@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 97612695963531947}
   - component: {fileID: 2066249009093411948}
   - component: {fileID: 902584441833178175}
-  - component: {fileID: 1203356937040786615}
+  - component: {fileID: 6799511941289839354}
   m_Layer: 0
   m_Name: Teleport B
   m_TagString: Untagged
@@ -152,7 +152,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1
---- !u!114 &1203356937040786615
+--- !u!114 &6799511941289839354
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -161,12 +161,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 3134146680820795887}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9dbf3be077dd5b541831f473128c90f1, type: 3}
+  m_Script: {fileID: 11500000, guid: 22cabc2b5f9171f44bd983d942f1f29e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destination: {fileID: 0}
-  sprite: {fileID: 1342752087748381201}
-  thisB: 1
 --- !u!1 &7690875712595589293
 GameObject:
   m_ObjectHideFlags: 0
