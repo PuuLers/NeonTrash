@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class Blade : MonoBehaviour
 {
+    private GameObject blade;
+	public bool Appear = false;
+
+    void Start()
+    {
+        blade = gameObject;
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Scavenger player;
@@ -11,6 +18,10 @@ public class Blade : MonoBehaviour
         {
             player = collision.gameObject.GetComponent<Scavenger>();
             player.TakeDamage(1);
+            blade.SetActive(Appear);
         }
+        
+        
+		
     }
 }
