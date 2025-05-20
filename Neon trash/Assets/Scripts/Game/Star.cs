@@ -15,15 +15,11 @@ public class Star : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision != null)
-        {
-            if (collision.CompareTag("Player"))
-            {
-                animator.SetBool("die", true);
-                Level level = collision.gameObject.GetComponent<Level>();
-                level.StarNumberAdd();
-            }
-        }
+        if (!collision.CompareTag("Player")) return;
+        animator.SetBool("die", true);
+        Level level = collision.gameObject.GetComponent<Level>();
+        level.StarNumberAdd();
+        
     }
 
     public void ParticleSystem()

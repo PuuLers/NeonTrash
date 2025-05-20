@@ -28,14 +28,11 @@ public class TeleportA : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
         this.collision = collision;
-        if (collision != null)
+        if (collision.CompareTag("Player"))
         {
-            if (collision.CompareTag("Player"))
+            if (Vector2.Distance(collision.transform.position, transform.position) > 0.3f)
             {
-                if (Vector2.Distance(collision.transform.position, transform.position) > 0.3f)
-                {
-                    StartCoroutine(IPortal());
-                }
+                StartCoroutine(IPortal());
             }
         }
     }
